@@ -1,5 +1,12 @@
 ﻿using ChessChallenge.API;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 public class MyBot : IChessBot
 {
@@ -33,7 +40,7 @@ public class MyBot : IChessBot
         }
         return num;
     }
-    public int minMax(Board board, int turn, int depth)
+    public int minMax(Board board,int turn,int depth)
     {
         if (depth == 0)
         {
@@ -57,7 +64,7 @@ public class MyBot : IChessBot
         for (int i = 0; i < moves.Length; i++)
         {
             board.MakeMove(moves[i]);
-            moveScores[i] = minMax(board, turn * -1, depth - 1);
+            moveScores[i] = minMax(board,turn*-1,depth-1);
             board.UndoMove(moves[i]);
         }
 
@@ -81,13 +88,13 @@ public class MyBot : IChessBot
         int turn = -1;
         if (board.IsWhiteToMove) { turn = 1; }
 
-        Move[] moves = board.GetLegalMoves();
+        Move[] moves = board.GetLegalMoves(); 
         int[] moveScores = new int[moves.Length];
 
-        for (int i = 0; i < moves.Length; i++)
+        for (int i=0; i < moves.Length; i++)
         {
             board.MakeMove(moves[i]);
-            moveScores[i] = minMax(board, turn * -1, 2);
+            moveScores[i] = minMax(board,turn*-1,2);
             board.UndoMove(moves[i]);
             Console.WriteLine(moveScores[i]);
         }
@@ -96,7 +103,7 @@ public class MyBot : IChessBot
         int bestScore = int.MinValue * turn;
         for (int i = 0; i < moves.Length; i++)
         {
-            if (bestScore * turn < moveScores[i] * turn)
+            if (bestScore*turn < moveScores[i]*turn)
             {
                 bestScore = moveScores[i];
                 bestMove = moves[i];
