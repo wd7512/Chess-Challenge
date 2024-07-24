@@ -1,4 +1,4 @@
-# ------
+
 This was my attempt at Seb Lague's chess challenge and my first time coding in C#. I was happy with the following results putting me in the top 35%, learning about the Min Max algorithm and optimisations.
 
 | Rank out of 624 | Name                | Elo  |  +  |  -  | Games | Score | Oppo. | Draws |
