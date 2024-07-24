@@ -1,8 +1,10 @@
 # ------
 This was my attempt at Seb Lague's chess challenge and my first time coding in C#. I was happy with the following results putting me in the top 35%, learning about the Min Max algorithm and optimisations.
 
-Rank Name                                                                     Elo    +    - games score oppo. draws
-220 Chessi (by: Will D)                                                     1020   80   80    64   51%  1024   17%
+| Rank out of 624 | Name                | Elo  |  +  |  -  | Games | Score | Oppo. | Draws |
+|-----------------|---------------------|------|-----|-----|-------|-------|-------|-------|
+| 220             | Chessi (by: Will D) | 1020 |  80 |  80 |    64 |   51% |  1024 |   17% |
+
 
 
 # Chess Coding Challenge (C#)
